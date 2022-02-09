@@ -14,6 +14,7 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      overflow: hidden;
       margin: 0;
       padding: 0;
     }
