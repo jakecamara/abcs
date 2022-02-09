@@ -14,7 +14,6 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      overflow: hidden;
       margin: 0;
       padding: 0;
     }
@@ -152,7 +151,6 @@
 
       $('.button--case').click(function(){
         $('.abc-slides').toggleClass('abc-slides--lowercase');
-        $('.abc-slides').slick('slickGoTo', 0);
       });
 
       $('.button--restart').click(function(){
