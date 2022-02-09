@@ -87,15 +87,25 @@
       background-color: #000;
     } */
 
-    .case-toggle {
+    .buttons {
       position: absolute;
-      width: 30px;
-      height: 30px;
-      background-color: #fff;
-      right: 0;
       bottom: 0;
-      padding: 5px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
     }
+
+    .buttons .button {
+      width: 40px;
+      height: 40px;
+      background-color: #fff;
+      padding: 0px;
+      font-size: 30px;
+    }
+
   </style>
 
 </head>
@@ -120,10 +130,16 @@
 
   </ul>
 
-  <div class="case-toggle">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M165.2 160h173.6l-41.38 41.38c-12.5 12.5-12.5 32.75 0 45.25c12.49 12.49 32.74 12.51 45.25 0l95.1-96c12.5-12.5 12.5-32.75 0-45.25l-95.1-96c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L338.8 96H165.2C90.87 96 25.15 143.4 1.652 213.9C-3.941 230.7 5.121 248.8 21.9 254.3C25.25 255.5 28.66 256 32.01 256c13.41 0 25.89-8.469 30.36-21.88C77.13 189.8 118.5 160 165.2 160zM490.1 257.7C486.8 256.5 483.3 256 479.1 256c-13.41 0-25.89 8.469-30.36 21.88C434.9 322.2 393.5 352 346.8 352H173.2l41.38-41.38c12.5-12.5 12.5-32.75 0-45.25c-12.49-12.49-32.74-12.51-45.25 0l-95.1 96c-12.5 12.5-12.5 32.75 0 45.25l95.1 96c12.5 12.5 32.75 12.5 45.25 0s12.5-32.75 0-45.25L173.2 416h173.6c74.33 0 140-47.38 163.5-117.9C515.9 281.3 506.9 263.2 490.1 257.7z"/></svg>
+  <div class="buttons">
+    <div class="button button--restart">
+      <i class="fa-solid fa-backward-step"></i>
+    </div>
+    <div class="button button--case">
+      <i class="fa-solid fa-font-case"></i>
+    </div>
   </div>
-
+  
+  <script src="https://kit.fontawesome.com/e581310d77.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -134,8 +150,13 @@
         'arrows': false
       });
 
-      $('.case-toggle').click(function(){
+      $('.button--case').click(function(){
         $('.abc-slides').toggleClass('abc-slides--lowercase');
+        $('.abc-slides').slick('slickGoTo', 0);
+      });
+
+      $('.button--restart').click(function(){
+        $('.abc-slides').slick('slickGoTo', 0);
       });
 
       $('ul li').each(function(){
