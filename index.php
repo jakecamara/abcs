@@ -29,6 +29,12 @@
       cursor: pointer;
       font-size: 100vw;
       text-align: center;
+      outline: none;
+    }
+    @media (orientation: landscape) {
+      .abc-slides li {
+        font-size: 100vh;
+      }
     }
 
     <?php
@@ -50,7 +56,7 @@
     ?>
     
     .abc-slides li span {
-      height: 100vh;
+      height: 90vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -59,6 +65,11 @@
     @media (min-width: 768px) {
       .abc-slides li {
         font-size: 75vh;
+      }
+    }
+    @media (orientation: landscape) {
+      .abc-slides li span {
+        height: 100vh;
       }
     }
   </style>
